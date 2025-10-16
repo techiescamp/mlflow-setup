@@ -1,0 +1,26 @@
+service:
+  enabled: true
+  type: NodePort
+
+postgresql:
+  enabled: true
+  architecture: standalone
+
+  primary:
+    service:
+      ports:
+        postgresql: 5432
+    persistence:
+      enabled: true
+      existingClaim: ""
+  auth:
+    username: "<database-username>"
+    password: "<database-password>"
+    database: "mlflow"
+
+artifactRoot:
+  azureBlob:
+    enabled: true
+    container: "mlflow"
+    storageAccount: "<storage-account-name>"
+    connectionString: "<connection-string>"
