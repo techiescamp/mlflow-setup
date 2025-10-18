@@ -14,4 +14,4 @@ artifactRoot:
     enabled: true
     container: "mlflow"
     storageAccount: "<storage-account-name>"
-    connectionString: "<connection-string>"
+    accessKey: "<storage-account-access-key>"
